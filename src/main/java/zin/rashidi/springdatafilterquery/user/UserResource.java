@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static zin.rashidi.springdatafilterquery.user.UserStatus.INACTIVE;
-
 /**
  * @author Rashidi Zin
  */
@@ -19,7 +17,7 @@ public class UserResource {
 
     @GetMapping("/users")
     public List<User> browse() {
-        return repository.findByStatusIsNot(INACTIVE);
+        return repository.findAll();
     }
 
 }
