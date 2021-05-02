@@ -1,6 +1,7 @@
 package zin.rashidi.springdatafilterquery.user;
 
 import org.springframework.data.domain.Example;
+import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
 import javax.persistence.EntityManager;
@@ -13,8 +14,8 @@ import static zin.rashidi.springdatafilterquery.user.UserStatus.ACTIVE;
  */
 public class UserFilteredQueryRepository extends SimpleJpaRepository<User, Long> {
 
-    public UserFilteredQueryRepository(Class<User> domainClass, EntityManager em) {
-        super(domainClass, em);
+    public UserFilteredQueryRepository(JpaEntityInformation<User, ?> entityInformation, EntityManager entityManager) {
+        super(entityInformation, entityManager);
     }
 
     @Override

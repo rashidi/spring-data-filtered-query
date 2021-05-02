@@ -77,8 +77,8 @@ will be responsible to filter only `ACTIVE` users will be returned.
 ```java
 public class UserFilteredQueryRepository extends SimpleJpaRepository<User, Long> {
 
-    public UserFilteredQueryRepository(Class<User> domainClass, EntityManager em) {
-        super(domainClass, em);
+    public UserFilteredQueryRepository(JpaEntityInformation<User, ?> entityInformation, EntityManager entityManager) {
+        super(entityInformation, entityManager);
     }
 
     @Override
